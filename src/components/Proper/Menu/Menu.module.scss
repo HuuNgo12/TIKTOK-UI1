@@ -1,0 +1,26 @@
+.menu-list {
+  width: 224px;
+  padding-bottom: 8px;
+
+  .menu-item {
+    margin-left: 0px;
+    // border-radius: 0;
+    // font-weight: 600;
+    // padding: 14px 16px;
+  }
+}
+
+.menu-item {
+  width: 100%;
+  padding: 11px 16px;
+  display: flex;
+  justify-content: flex-start;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.menu-proper {
+  padding-bottom: 8px;
+}
