@@ -29,6 +29,11 @@ import styles from "./Header.module.scss";
 import images from "../../../../assets/images";
 import AccountsItem from "../../../AccountsItems";
 import Menu from "../../../Proper/Menu";
+import { UploadIcon } from "../../../../components/Icons";
+import { MessageIcon } from "../../../../components/Icons";
+import { InboxIcon } from "../../../../components/Icons";
+import { SearchIcon } from "../../../../components/Icons";
+import Image from "../../../../components/Image";
 
 //
 const MENU_ITEMS = [
@@ -132,7 +137,7 @@ function Header() {
             <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
 
             <button className={cx("search-btn")}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -141,7 +146,17 @@ function Header() {
             <>
               <Tippy delay={(0, 200)} content="Upload Video" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={(0, 200)} content="Messagers" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <MessageIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={(0, 200)} content="Inbox" placement="bottom">
+                <button className={cx("action-btn", "inbox-message")}>
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -156,7 +171,7 @@ function Header() {
             onChange={handleMenuChange}
           >
             {userCurrent ? (
-              <img
+              <Image
                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/d7d2aa84b494e467d96d0ba783e47f0d.jpeg?x-expires=1697274000&x-signature=BInhhmutosa1S1WWl1CbpBaWqbI%3D"
                 className={cx("user-avatar")}
                 alt="nguyen van A"
