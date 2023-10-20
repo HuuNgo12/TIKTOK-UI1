@@ -18,11 +18,14 @@ import {
 // tippy
 import Tippy from "@tippyjs/react/";
 import "tippy.js/dist/tippy.css";
+
 //
 import Button from "../../../Button";
 import styles from "./Header.module.scss";
-import images from "../../../../assets/images";
+import { Link } from "react-router-dom";
+import reoutesConfig from "../../../../config/routes";
 
+import images from "../../../../assets/images";
 import Menu from "../../../Proper/Menu";
 import { UploadIcon } from "../../../../components/Icons";
 import { MessageIcon } from "../../../../components/Icons";
@@ -41,10 +44,6 @@ const MENU_ITEMS = [
         {
           code: "En",
           title: "English",
-        },
-        {
-          code: "Vi",
-          title: "Viet Nam",
         },
       ],
     },
@@ -97,9 +96,10 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <div className={cx("logo")}>
-          <img src={images.logo} alt="Tiktok" />
-        </div>
+        <Link to={reoutesConfig.home}>
+          <img src={images.logo} alt="Tiktok" className={cx("tiktok-logo")} />
+        </Link>
+
         <Search />
         <div className={cx("actions")}>
           {userCurrent ? (

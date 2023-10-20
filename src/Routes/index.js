@@ -1,5 +1,6 @@
 //Layout
 import { HeaderOnly } from "../components/Layout";
+import reoutesConfig from "../config/routes";
 
 // pages
 import Home from "../pages/Home";
@@ -9,11 +10,11 @@ import Upload from "../pages/Upload";
 import Search from "../pages/Search";
 
 const publishRoutes = [
-  { path: "/", component: Home },
-  { path: "/following", component: Following },
-  { path: "/:nickname", component: Profile },
-  { path: "/upload", component: Upload, layout: HeaderOnly },
-  { path: "/search", component: Search, layout: null },
+  { path: reoutesConfig.home, component: Home },
+  { path: reoutesConfig.following, component: Following },
+  { path: reoutesConfig.nickname, component: Profile },
+  { path: reoutesConfig.upload, component: Upload, layout: HeaderOnly },
+  { path: reoutesConfig.search, component: Search, layout: null },
 ];
 const privateRoutes = [];
 export { publishRoutes, privateRoutes };

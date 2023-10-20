@@ -9,7 +9,12 @@ import { wrapper as ProperWrapper } from "../../Proper";
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({
+  children,
+  items = [],
+  hideOnClick = false,
+  onChange = defaultFn,
+}) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
   const renderItems = () => {
@@ -38,6 +43,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       interactive={true}
       offset={[12, 8]}
       placement="bottom-end"
+      hideOnClick={hideOnClick}
       render={(attrs) => (
         <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
           <ProperWrapper className={cx("menu-proper")}>
@@ -54,7 +60,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             mãng đó có tới 2 phần tử, vì có điều kiện, là nếu có children thì add thêm 1 phần tử vào cái mảng children, nên nếu có cấp
             2 thì mảng đó có 2 phần tử. Khi render thì sẽ render ra phần tử của cuối cùng của mảng. Nên nó sẽ render ra thằng cấp 2
             */}
-            {renderItems()}
+            <div className={cx("menu-body")}>{renderItems()}</div>
           </ProperWrapper>
         </div>
       )}
