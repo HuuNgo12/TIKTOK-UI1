@@ -1,15 +1,15 @@
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
-  faSignIn,
+  // faMagnifyingGlass,
+  // faSignIn,
   faEllipsisVertical,
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudArrowUp,
-  faMessage,
-  faCloudUpload,
+  // faCloudArrowUp,
+  // faMessage,
+  // faCloudUpload,
   faUser,
   faCoins,
   faGear,
@@ -20,17 +20,17 @@ import Tippy from "@tippyjs/react/";
 import "tippy.js/dist/tippy.css";
 
 //
-import Button from "../../../Button";
+import Button from "../../../components/Button";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
-import reoutesConfig from "../../../../config/routes";
+import reoutesConfig from "../../../config/routes";
 
-import images from "../../../../assets/images";
-import Menu from "../../../Proper/Menu";
-import { UploadIcon } from "../../../../components/Icons";
-import { MessageIcon } from "../../../../components/Icons";
-import { InboxIcon } from "../../../../components/Icons";
-import Image from "../../../../components/Image";
+import images from "../../../assets/images";
+import Menu from "../../../components/Proper/Menu";
+import { UploadIcon } from "../../../components/Icons";
+import { MessageIcon } from "../../../components/Icons";
+import { InboxIcon } from "../../../components/Icons";
+import Image from "../../../components/Image";
 import Search from "../Search";
 
 //
@@ -44,6 +44,10 @@ const MENU_ITEMS = [
         {
           code: "En",
           title: "English",
+        },
+        {
+          code: "Vi",
+          title: "Viet Nam",
         },
       ],
     },

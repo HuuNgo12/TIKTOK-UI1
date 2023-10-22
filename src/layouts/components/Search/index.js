@@ -3,13 +3,13 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import HeadlessTippy from "@tippyjs/react/headless";
 import { useState, useEffect, useRef } from "react";
-import { useDebounced } from "../../../../hooks";
-import { wrapper as ProperWrapper } from "../../../Proper";
-import AccountsItem from "../../../AccountsItems";
-import { SearchIcon } from "../../../../components/Icons";
+import { useDebounced } from "../../../hooks";
+import { wrapper as ProperWrapper } from "../../../components/Proper";
+import AccountsItem from "../../../components/AccountsItems";
+import { SearchIcon } from "../../../components/Icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import * as searchService from "../../../../ApiService/searchService";
+import * as searchService from "../../../services/searchService";
 
 import styles from "./Search.module.scss";
 import classNames from "classnames/bind";

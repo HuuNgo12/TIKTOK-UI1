@@ -4,7 +4,7 @@ import React from "react";
 import { publishRoutes } from "./Routes";
 
 //layout
-import { DefaultLayout } from "./components/Layout";
+import DefaultLayout from "./layouts/DefaultLayout";
 
 const App = () => {
   return (

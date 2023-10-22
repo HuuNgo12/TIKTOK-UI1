@@ -1,5 +1,5 @@
 //Layout
-import { HeaderOnly } from "../components/Layout";
+import HeaderOnly from "../layouts/HeaderOnly";
 import reoutesConfig from "../config/routes";
 
 // pages
