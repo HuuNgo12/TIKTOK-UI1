@@ -37,7 +37,12 @@ function Menu({
       );
     });
   };
-
+  const handlerBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  };
+  const handlerResetMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
   return (
     <Tippy
       delay={[0, 700]}
@@ -49,12 +54,7 @@ function Menu({
         <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
           <ProperWrapper className={cx("menu-proper")}>
             {history.length > 1 && (
-              <Header
-                title={current.title}
-                onBack={() => {
-                  setHistory((prev) => prev.slice(0, prev.length - 1));
-                }}
-              />
+              <Header title={current.title} onBack={handlerBack} />
             )}
             {/*đọc câu trên lú lắm phải không, t cũng vừa lú nhưng giờ hiểu rồi :))))
             - nếu menu cấp 1 thì mảng current chỉ có một phần tử (lý do vì sao thì tự hiểu), nhưng khi menu cấp 2 thì
@@ -65,9 +65,7 @@ function Menu({
           </ProperWrapper>
         </div>
       )}
-      onHidden={() => {
-        setHistory((prev) => prev.slice(0, 1));
-      }}
+      onHidden={handlerResetMenu}
     >
       {children}
     </Tippy>

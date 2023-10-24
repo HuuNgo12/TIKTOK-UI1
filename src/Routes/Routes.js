@@ -5,6 +5,7 @@ import reoutesConfig from "../config/routes";
 // pages
 import Home from "../pages/Home";
 import Following from "../pages/Following";
+import Live from "../pages/Live";
 import Profile from "../pages/Profile";
 import Upload from "../pages/Upload";
 import Search from "../pages/Search";
@@ -12,6 +13,7 @@ import Search from "../pages/Search";
 const publishRoutes = [
   { path: reoutesConfig.home, component: Home },
   { path: reoutesConfig.following, component: Following },
+  { path: reoutesConfig.live, component: Live },
   { path: reoutesConfig.nickname, component: Profile },
   { path: reoutesConfig.upload, component: Upload, layout: HeaderOnly },
   { path: reoutesConfig.search, component: Search, layout: null },
